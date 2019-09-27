@@ -46,6 +46,10 @@ class AudioProcessor:
     # and testing sets.  Returns them all for use in initialising the model.
     # expects that the data is a numpy array where the top 
     def prepareData(self, rawData):
+        indices = np.random.choice(range(rawData.shape[0]))
+        print(indices)
+        print(rawData[indices, :])
+        print(rawData.shape)
         trainX = "hello"
         trainY = "goodbye"
         testX = "yellow"
