@@ -1,4 +1,9 @@
 import tensorflow as tf
+import numpy as np
 
-for i in range(10):
-    print("Hello world")
+class HammeredModel:
+    
+    def train(dataset, learningRate = 0.1, numIterations = 1000, batchSize = 100, displayStep = 2):
+        print("Gooday mate")
+
+    
