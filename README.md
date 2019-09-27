@@ -1,6 +1,6 @@
 # git-hammered
 
-Uses deep learning to verify whether commits to master are... acceptable.
+Using deep learning to verify whether commits to master are... acceptable.
 
 ## Depedencies
 
