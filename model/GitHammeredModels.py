@@ -1,4 +1,5 @@
 import tflearn
+import tensorflow as tf
 import numpy as np
 
 class HammeredModel:
@@ -26,6 +27,27 @@ class HammeredModel:
 
     # returns true if the audio sample (processed by AudioProcessor class) is drunk, returns false 
     # if the sample is sober
-    def inference(self, processedAudioSample) -> bool:
+    def predict(self, processedAudioSample) -> bool:
         return self.model.predict(processedAudioSample)
 
+# AudioProcessor class provides standarised functionality to perform conversions between .wav files 
+# and interpretable tensors for use in the HammeredModel.  See method comments for guidance on use
+class AudioProcessor:
+
+    def __init__(self):
+        print("Audio processor at your service.")
+
+    # process a given single, unlabeled, audio sample, into a given tensor for model interpretability
+    def processAudioSample(self, audioSample):
+        # perform the processing here
+        return tf.contrib.ffmpeg.decode_audio(audioSample)
+
+    # takes a raw array of .wav file and boolean pairs, then breaks them down into tensors for training
+    # and testing sets.  Returns them all for use in initialising the model.
+    # expects that the data is a numpy array where the top 
+    def prepareData(self, rawData):
+        trainX = "hello"
+        trainY = "goodbye"
+        testX = "yellow"
+        testY = "mellow"
+        return trainX, trainY, testX, testY
